@@ -4,6 +4,7 @@ import AboutSection from './AboutSection/AboutSection';
 import OurService from './OurService/OurService';
 import DynamicSection from '../../Shared/DynamicSection/DynamicSection';
 import PopulerCourse from './PopulerCourse/PopulerCourse';
+import OurCategori from './OurCategori/OurCategori';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <OurService></OurService>
             <DynamicSection></DynamicSection>
             <PopulerCourse></PopulerCourse>
+            <OurCategori></OurCategori>
         </div>
     );
 };

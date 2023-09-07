@@ -87,7 +87,7 @@ const dropHandlear=()=>{
             <div className='  relative md:hidden font-bold mr-5 '>
                     <button onClick={dropHandlear}><FaBars/></button>
                    {
-                    isOpen===true?<div className='absolute top-10 right-0'>
+                    isOpen===true?<div className='absolute top-10 right-0 '>
                     {dropdown}
                 </div>:<></>
                    }

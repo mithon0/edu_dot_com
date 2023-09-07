@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='bg-[#FBF6F0] w-full relative'>
-            <img className='h-screen w-screen' src="https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
+        <div className='bg-[#FBF6F0] w-full relative '>
+            <img className='h-screen w-screen  ' src="https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
             <div className='absolute md:top-32 top-2  grid md:grid-cols-2 grid-cols-1'>
                 <div className='md:ms-36 mr-11 mx-5 md:mx-auto mt-14'>
                     <h2 className='text-5xl font-bold text-indigo-950'>Come along as we begin Our learning journey</h2>
