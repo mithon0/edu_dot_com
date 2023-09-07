@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaPhoneAlt, FaSistrix, FaUserAlt } from "react-icons/fa";
 
 const Navber = () => {
-const [isOpen,setIsOpen]=useState(false)
+const [isOpen,setIsOpen]=useState(false);
+
 const dropHandlear=()=>{
         if(isOpen===true){
             setIsOpen(false)
@@ -12,35 +13,23 @@ const dropHandlear=()=>{
             setIsOpen(true)
         }
 }
+
     const dropdown =
         <div className='w-32 bg-slate-300 ' >
             <ul className=''>
                 <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm '><Link>Home</Link></li>
-                <li>
-                    <select name="about" className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm bg-slate-300' id="">
-                        <option value=""><Link>About</Link></option>
-                        <option value=""><Link>Contact</Link></option>
-                        <option value=""><Link>FAQ</Link></option>
-
-                    </select>
-                </li>
+                
                 <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link>Course</Link></li>
                 <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link>Pages</Link></li>
-                <li >
-                    <select className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm bg-slate-300' name="blog" id="">
-                        <option value=""><Link>Blog</Link></option>
-                        <option value=""><Link>Blog_Sideber</Link></option>
-                        <option value=""><Link>Blog Details</Link></option>
-
-                    </select>
-                </li>
+                
                 <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm '><Link>Shop</Link></li>
 
             </ul>
         </div>
 
     return (
-        <div className='flex items-center md:gap-2 justify-between'>
+       <div>
+         <div className='flex items-center md:gap-2 justify-between'>
             <div className='flex items-center justify-start'>
                 <img src={logo} alt="" />
                 <h2 className=' text-3xl font-bold text-orange-500'>edu.<span className='text-blue-600'>Com</span></h2>
@@ -48,24 +37,9 @@ const dropHandlear=()=>{
             <div className='md:mx-auto ' >
                 <ul className='md:flex gap-4 hidden'>
                     <li className='hover:bg-blue-300 border-none p-2  rounded-sm '><Link>Home</Link></li>
-                    <li>
-                        <select name="about" className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm ' id="">
-                            <option value=""><Link>About</Link></option>
-                            <option value=""><Link>Contact</Link></option>
-                            <option value=""><Link>FAQ</Link></option>
-
-                        </select>
-                    </li>
+                    <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link to="/about">About</Link></li>
                     <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link>Course</Link></li>
                     <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link>Pages</Link></li>
-                    <li >
-                        <select className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm ' name="blog" id="">
-                            <option value=""><Link>Blog</Link></option>
-                            <option value=""><Link>Blog_Sideber</Link></option>
-                            <option value=""><Link>Blog Details</Link></option>
-
-                        </select>
-                    </li>
                     <li className='hover:bg-blue-300 border-none p-2 rounded-sm '><Link>Shop</Link></li>
                     <div className='flex gap-2 items-center text-2xl'>
                         <FaSistrix className='hover:text-blue-500' />
@@ -86,14 +60,16 @@ const dropHandlear=()=>{
             </div>
             <div className='  relative md:hidden font-bold mr-5 '>
                     <button onClick={dropHandlear}><FaBars/></button>
-                   {
-                    isOpen===true?<div className='absolute top-10 right-0 '>
-                    {dropdown}
-                </div>:<></>
-                   }
-            </div>
-          
-        </div>
+                  
+            </div></div>
+             <div className=' flex justify-end'>
+             {
+                     isOpen===true?<div className=''>
+                     {dropdown}
+                 </div>:<></>
+                    }
+             </div>
+       </div>
     );
 };
 
