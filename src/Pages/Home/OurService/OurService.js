@@ -8,7 +8,7 @@ const OurService = () => {
         <div className='relative'>
             <div className=''>
                 <img className='h-screen w-screen md:block hidden ' src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="" />
-                <div className='w-screen h-20 bg-orange-400'></div>
+                {/* <div className='w-screen h-20 bg-orange-400'></div> */}
 
             </div>
             <div className='md:absolute md:top-40  md:left-[500px] '>

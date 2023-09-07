@@ -1,0 +1,62 @@
+[
+  {
+    "course_id": 1,
+    "course_name": "Web Development",
+    "description": "Learn front-end and back-end web development to build modern websites and web applications.",
+    "duration": "12 weeks",
+    "price": 299,
+    "instructor": "John Smith",
+    "ratings": 4.7,
+    "images": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "course_id": 2,
+    "course_name": "Management",
+    "description": "Master the principles of effective management, leadership, and organizational development.",
+    "duration": "10 weeks",
+    "price": 249,
+    "instructor": "Sarah Johnson",
+    "ratings": 5,
+    "images": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "course_id": 3,
+    "course_name": "Business Administration",
+    "description": "Explore the fundamentals of business administration, including finance, marketing, and strategy.",
+    "duration": "8 weeks",
+    "price": 199,
+    "instructor": "David Williams",
+    "ratings": 4.5,
+    "images": "https://images.unsplash.com/photo-1570616969692-54d6ba3d0397?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80"
+  },
+  {
+    "course_id": 4,
+    "course_name": "Data Science",
+    "description": "Dive into data analysis, machine learning, and data-driven decision-making with data science courses.",
+    "duration": "14 weeks",
+    "price": 349,
+    "instructor": "Emily Davis",
+    "ratings": 4.8,
+    "images": "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "course_id": 5,
+    "course_name": "Graphic Design",
+    "description": "Develop your design skills and creativity in graphic design courses covering Photoshop, Illustrator, and more.",
+    "duration": "9 weeks",
+    "price": 199,
+    "instructor": "Michael Clark",
+    "ratings": 4.6,
+    "images": "https://images.unsplash.com/photo-1500160503851-c04cefe545a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+  },
+  {
+    "course_id": 6,
+    "course_name": "Digital Marketing",
+    "description": "Learn the ins and outs of online marketing, SEO, social media, and advertising.",
+    "duration": "11 weeks",
+    "price": 249,
+    "instructor": "Jennifer Lee",
+    "ratings": 4,
+    "images": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+  }
+]
