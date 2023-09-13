@@ -1,16 +1,35 @@
 import React, { useState } from 'react';
 import { FaHeart, FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 const PopulerCourseCard = ({ratings,course}) => {
-    const {images,instructor,price,duration,description,course_name}=course;
+    const {images,instructor,price,duration,description,course_name,_id}=course;
     const [addFvorite,setAddFavorit]=useState(false);
+    const [user,setUser]=useState(null)
+    const navigate =useNavigate()
+    
     const favoriteHandler =()=>{
+        
         if(addFvorite===false ){
-            setAddFavorit(true)
+            
+            
+            if(user){
+                setAddFavorit(true)
+                fetch(`http://localhost:5000/users/${_id}`,{
+                    method:"PATCH"
+                
+                })
+                .then((res)=>{res.json()})
+                .then((data)=>{console.log(data)})
+            }else{
+                navigate('/login')
+            }
+
         }else{
             setAddFavorit(false)
         }
     }
 
+    
     return (
         <div className='border mt-10 mb-10 bg-white rounded-lg mx-1'>
             <div className='bg-slate-300 rounded-b-full relative'>

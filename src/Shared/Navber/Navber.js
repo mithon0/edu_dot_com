@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import logo from "../../asset/images/logo.jpg";
+import logo from "../../asset/images/logo.png";
 import { Link } from 'react-router-dom';
-import { FaBars, FaPhoneAlt, FaSistrix, FaUserAlt } from "react-icons/fa";
+import { FaBars, FaPhoneAlt, FaTimes, FaUserAlt } from "react-icons/fa";
 
 const Navber = () => {
 const [isOpen,setIsOpen]=useState(false);
-
+const [Profile,setProfile]=useState(false);
+const user = "null";
 const dropHandlear=()=>{
         if(isOpen===true){
             setIsOpen(false)
@@ -14,12 +15,21 @@ const dropHandlear=()=>{
         }
 }
 
+        const profileHandler =()=>{
+            if(Profile===true){
+                setProfile(false)
+            }else{
+                setProfile(true)
+            }
+        }
+
     const dropdown =
-        <div className='w-32 bg-slate-300 ' >
-            <ul className=''>
-                <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm '><Link>Home</Link></li>
+        <div className='w-full' >
+            <ul className='font-semibold'>
+                <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link to="/">Home</Link></li>
+                <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link to="/about">About</Link></li>
                 
-                <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link>Course</Link></li>
+                <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link to='/favorite'>Favorite Course</Link></li>
                 <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm'><Link>Pages</Link></li>
                 
                 <li className='hover:bg-blue-300 border-none p-2 w-28 rounded-sm '><Link>Shop</Link></li>
@@ -28,22 +38,35 @@ const dropHandlear=()=>{
         </div>
 
     return (
-       <div>
-         <div className='flex items-center md:gap-2 justify-between'>
+       <div className=''>
+         <div className='flex items-center md:gap-2 justify-between  '>
             <div className='flex items-center justify-start'>
-                <img src={logo} alt="" />
-                <h2 className=' text-3xl font-bold text-orange-500'>edu.<span className='text-blue-600'>Com</span></h2>
+                <img className='w-20' src={logo} alt="" />
+                <h2 className=' text-3xl font-bold text-red-500'>edu.<span className='text-green-600'>Com</span></h2>
             </div>
             <div className='md:mx-auto ' >
                 <ul className='md:flex gap-4 hidden'>
                     <li className='hover:bg-blue-300 border-none p-2  rounded-sm '><Link>Home</Link></li>
                     <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link to="/about">About</Link></li>
-                    <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link>Course</Link></li>
+                    <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link to='/favorite'>Favorite Course</Link></li>
                     <li className='hover:bg-blue-300 border-none p-2  rounded-sm'><Link>Pages</Link></li>
                     <li className='hover:bg-blue-300 border-none p-2 rounded-sm '><Link>Shop</Link></li>
-                    <div className='flex gap-2 items-center text-2xl'>
-                        <FaSistrix className='hover:text-blue-500' />
-                        <FaUserAlt className='hover:text-blue-500' />
+                    <div className='flex gap-2 items-center text-2xl text-white bg-black p-2 rounded-full'>
+                        
+                       {
+                        user? <FaUserAlt onClick={profileHandler} className='hover:text-blue-500' />:<Link className='px-2 bg-slate-700 rounded-lg text-white font-bold' to="/signup">Join For Free</Link>
+                       }
+                        {
+                            Profile? <div>
+                            <ul>
+                                <li>
+                                    <Link className='bg-blue-400 text-white rounded-xl px-3 ' to="/profile">Profile</Link>
+                                    <button className='px-3  bg-red-700 rounded-xl ms-1'>LogOut</button>
+                                </li>
+                            </ul>
+                        </div>:<></>
+                        }
+                       
                     </div>
                 </ul>
 
@@ -59,10 +82,12 @@ const dropHandlear=()=>{
                 </div>
             </div>
             <div className='  relative md:hidden font-bold mr-5 '>
-                    <button onClick={dropHandlear}><FaBars/></button>
+                    {
+                        isOpen===false?<button onClick={dropHandlear}><FaBars/></button>:<button onClick={dropHandlear}><FaTimes/></button>
+                    }
                   
             </div></div>
-             <div className=' flex justify-end'>
+             <div className=' '>
              {
                      isOpen===true?<div className=''>
                      {dropdown}

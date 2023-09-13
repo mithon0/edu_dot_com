@@ -3,7 +3,7 @@ import { FaEnvelope, FaFacebook, FaLinkedin, FaMapMarkerAlt,FaPhoneAlt, FaTwitte
 
 const Footer = () => {
     return (
-        <div className='w-full bg-indigo-900 text-indigo-200 grid md:grid-cols-4 grid-cols-1 p-20'>
+        <div className='w-full bg-green-900 text-indigo-200 grid md:grid-cols-4 grid-cols-1 p-20'>
             <div className='mx-auto'>
                 <h1 className='text-2xl text-orange-500 ms-10 mb-2'>edu.<span className='text-blue-500'>Com</span></h1>
                 <div>

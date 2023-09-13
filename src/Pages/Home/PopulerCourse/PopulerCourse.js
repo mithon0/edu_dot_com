@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PopulerCourseCard from './PopulerCourseCard';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const PopulerCourse = () => {
     const[course,setCourse]=useState([]);
+    const{user}=useContext(AuthContext)
+    console.log(user)
     useEffect(()=>{
-        fetch('Course.json')
+        fetch('http://localhost:5000/courses')
         .then(res=>res.json())
         .then(data=>setCourse(data))
     },[])
 
+    
 
     return (
        <div className='bg-indigo-100'>
@@ -20,6 +24,7 @@ const PopulerCourse = () => {
                 key={c.course_id}
                 course={c}
                 ratings={c.ratings}
+                user={user}
                 ></PopulerCourseCard>)
            }
             
