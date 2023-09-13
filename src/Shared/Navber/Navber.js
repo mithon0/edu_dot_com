@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from "../../asset/images/logo.png";
 import { Link } from 'react-router-dom';
 import { FaBars, FaPhoneAlt, FaTimes, FaUserAlt } from "react-icons/fa";
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navber = () => {
 const [isOpen,setIsOpen]=useState(false);
 const [Profile,setProfile]=useState(false);
-const user = "null";
+const {user,logOut}=useContext(AuthContext)
 const dropHandlear=()=>{
         if(isOpen===true){
             setIsOpen(false)
         }else{
             setIsOpen(true)
         }
-}
+};
 
         const profileHandler =()=>{
             if(Profile===true){
@@ -21,8 +22,14 @@ const dropHandlear=()=>{
             }else{
                 setProfile(true)
             }
-        }
+        };
 
+        //**logout**\
+        const logoutHander=()=>{
+            logOut()
+            
+        };
+        
     const dropdown =
         <div className='w-full' >
             <ul className='font-semibold'>
@@ -57,11 +64,11 @@ const dropHandlear=()=>{
                         user? <FaUserAlt onClick={profileHandler} className='hover:text-blue-500' />:<Link className='px-2 bg-slate-700 rounded-lg text-white font-bold' to="/signup">Join For Free</Link>
                        }
                         {
-                            Profile? <div>
+                            Profile && user? <div>
                             <ul>
                                 <li>
                                     <Link className='bg-blue-400 text-white rounded-xl px-3 ' to="/profile">Profile</Link>
-                                    <button className='px-3  bg-red-700 rounded-xl ms-1'>LogOut</button>
+                                    <button onClick={logoutHander} className='px-3  bg-red-700 rounded-xl ms-1'>LogOut</button>
                                 </li>
                             </ul>
                         </div>:<></>

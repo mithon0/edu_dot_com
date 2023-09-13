@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaHeart, FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 const PopulerCourseCard = ({ratings,course}) => {
     const {images,instructor,price,duration,description,course_name,_id}=course;
     const [addFvorite,setAddFavorit]=useState(false);
-    const [user,setUser]=useState(null)
+    const {user}=useContext(AuthContext);
     const navigate =useNavigate()
     
     const favoriteHandler =()=>{
@@ -19,7 +20,9 @@ const PopulerCourseCard = ({ratings,course}) => {
                 
                 })
                 .then((res)=>{res.json()})
-                .then((data)=>{console.log(data)})
+                .then((data)=>{console.log(data)
+                navigate('/favorite')
+                })
             }else{
                 navigate('/login')
             }
@@ -36,7 +39,7 @@ const PopulerCourseCard = ({ratings,course}) => {
                 <img className='rounded-b-full mx-auto h-60' src={images} />
                 <button onClick={favoriteHandler} className='absolute left-5 top-5'>
                     { addFvorite?
-                        <FaHeart className='text-4xl text-red-700 '/>:<FaRegHeart  className='text-4xl text-red-700 '/>
+                       <FaHeart className='text-4xl text-red-700 '/>:<FaRegHeart  className='text-4xl text-red-700 '/>
                         }
                     </button>
             </div>
